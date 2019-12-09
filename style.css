@@ -1,0 +1,113 @@
+body {
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    187deg,
+    rgba(45, 33, 52, 0.9458158263305322) 0%,
+    rgba(7, 9, 54, 1) 100%
+  );
+}
+
+.favourite {
+  font-size: 15px;
+}
+.favourite:hover {
+  cursor: pointer;
+}
+
+.celsius,
+.fahrenheit {
+  background-color: transparent;
+  border: none;
+  color: #fff0f5;
+  font-size: 15px;
+  float: right;
+}
+.temp {
+  font-size: 36px;
+}
+.favourite {
+  color: #fff0f5;
+  padding: 7px 10px;
+}
+.favourite:hover {
+  text-decoration: none;
+}
+.favourite i {
+  color: #c70848;
+}
+h1,
+h2 {
+  color: #fff0f5;
+  padding-top: 10px;
+}
+.description p {
+  color: #ffe4e1;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+p {
+  color: #c70848;
+  margin: 0;
+}
+
+.screen {
+  height: calc(100% - 33px);
+  width: 100%;
+}
+
+.nextDays {
+  flex-direction: column;
+}
+
+@media (max-width: 576px) {
+  .screen {
+    height: calc(100% - 66px);
+  }
+
+  .nextDays {
+    flex-flow: row nowrap;
+    align-items: ceter;
+  }
+}
+
+.now {
+  font-size: 48px;
+  color: #ffd369;
+}
+span {
+  font-size: 24px;
+}
+
+.nav {
+  border-bottom: 2px solid #5b0909;
+}
+
+.max {
+  color: #d2691e;
+  font-size: 16px;
+}
+.min {
+  color: #1e90ff;
+  font-size: 16px;
+}
+.nextHour .col-3,
+.nextDays .col-sm {
+  transition: all 200ms ease-in-out;
+}
+.nextHour .col-3:hover,
+.nextDays .col-sm:hover {
+  background: lightgrey;
+}
+.nextHour i {
+  padding: 10px;
+  color: #5b0909;
+}
