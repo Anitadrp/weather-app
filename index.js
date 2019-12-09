@@ -62,6 +62,7 @@ function handleCityTemperature(response) {
   let cityTemperature = response.data.main.temp;
   currentTemperature = Math.round(cityTemperature);
   temperatureChange();
+  descriptionCurrentWeather(response);
 }
 
 let submitSearch = document.querySelector("button");
@@ -153,7 +154,18 @@ function handleCurrentPosition(response) {
   handleCityTemperature(response);
 }
 
+function descriptionCurrentWeather(response) {
+  const wind = response.data.wind.speed;
+  const humidity = response.data.main.humidity;
+
+  descriptionCurrent.innerHTML = `Wind speed: ${wind} m/s<br>Humidity: ${humidity} %`;
+}
+
 navigator.geolocation.getCurrentPosition(currentPosition);
+
+let description = document.querySelector(".description");
+let descriptionCurrent = document.createElement("p");
+description.appendChild(descriptionCurrent);
 
 //temperatures
 
@@ -169,3 +181,11 @@ function temperatureChange() {
     temperature.innerHTML = `${fahrenheitTemperature}˚F`;
   }
 }
+
+let body = document.querySelector("body");
+let gitLink = document.createElement("a");
+body.appendChild(gitLink);
+
+gitLink.setAttribute("href", "https://github.com/Anitadrp/weather-app");
+gitLink.setAttribute("target", "blank");
+gitLink.innerHTML = "Open source code - Anitadrp";
